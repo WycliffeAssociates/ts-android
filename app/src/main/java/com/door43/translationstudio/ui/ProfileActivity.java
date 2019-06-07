@@ -49,6 +49,32 @@ public class ProfileActivity extends BaseActivity {
                 finish();
             }
         });
+
+        ImageButton moreButton = (ImageButton)findViewById(R.id.action_more);
+        moreButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu moreMenu = new PopupMenu(HomeActivity.this, v);
+                ViewUtil.forcePopupMenuIcons(moreMenu);
+                moreMenu.getMenuInflater().inflate(R.menu.menu_home, moreMenu.getMenu());
+                moreMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.action_settings:
+                                Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
+                                startActivity(intent);
+                                return true;
+                        }
+                        return false;
+                    }
+                });
+                moreMenu.show();
+            }
+        });
+
+
+
     }
 
     @Override
