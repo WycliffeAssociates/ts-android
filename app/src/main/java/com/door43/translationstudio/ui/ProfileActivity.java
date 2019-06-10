@@ -5,11 +5,17 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
+import android.view.MenuItem;
 import android.view.View;
+
+import android.widget.ImageButton;
+import android.widget.PopupMenu;
 
 import com.door43.translationstudio.App;
 import com.door43.translationstudio.R;
 import com.door43.translationstudio.core.Profile;
+import com.door43.translationstudio.ui.home.HomeActivity;
+import com.door43.widget.ViewUtil;
 
 public class ProfileActivity extends BaseActivity {
 
@@ -54,7 +60,7 @@ public class ProfileActivity extends BaseActivity {
         moreButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopupMenu moreMenu = new PopupMenu(HomeActivity.this, v);
+                PopupMenu moreMenu = new PopupMenu(ProfileActivity.this, v);
                 ViewUtil.forcePopupMenuIcons(moreMenu);
                 moreMenu.getMenuInflater().inflate(R.menu.menu_home, moreMenu.getMenu());
                 moreMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
@@ -62,7 +68,7 @@ public class ProfileActivity extends BaseActivity {
                     public boolean onMenuItemClick(MenuItem item) {
                         switch (item.getItemId()) {
                             case R.id.action_settings:
-                                Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
+                                Intent intent = new Intent(ProfileActivity.this, SettingsActivity.class);
                                 startActivity(intent);
                                 return true;
                         }
