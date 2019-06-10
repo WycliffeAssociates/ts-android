@@ -62,7 +62,7 @@ public class ProfileActivity extends BaseActivity {
             public void onClick(View v) {
                 PopupMenu moreMenu = new PopupMenu(ProfileActivity.this, v);
                 ViewUtil.forcePopupMenuIcons(moreMenu);
-                moreMenu.getMenuInflater().inflate(R.menu.menu_home, moreMenu.getMenu());
+                moreMenu.getMenuInflater().inflate(R.menu.menu_profile, moreMenu.getMenu());
                 moreMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
