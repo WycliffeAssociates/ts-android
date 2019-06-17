@@ -15,16 +15,6 @@
         <!--android:positiveButtonText="@null" />-->
 
     <EditTextPreference
-        android:key="auth_server"
-        android:title="@string/pref_title_auth_server"
-        android:defaultValue="@string/pref_default_auth_server"/>
-
-    <EditTextPreference
-        android:key="auth_server_port"
-        android:title="@string/pref_title_auth_server_port"
-        android:defaultValue="@string/pref_default_auth_server_port"/>
-
-    <EditTextPreference
         android:key="git_server"
         android:title="@string/pref_title_git_server"
         android:defaultValue="@string/pref_default_git_server"/>

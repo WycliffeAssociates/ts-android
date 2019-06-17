@@ -66,8 +66,6 @@ public class SettingsActivity extends PreferenceActivity implements ManagedTask.
      */
     private static final boolean ALWAYS_SIMPLE_PREFS = false;
 //    public static final String KEY_PREF_AUTOSAVE = "autosave";
-    public static final String KEY_PREF_AUTH_SERVER = "auth_server";
-    public static final String KEY_PREF_AUTH_SERVER_PORT = "auth_server_port";
     public static final String KEY_PREF_GIT_SERVER = "git_server";
     public static final String KEY_PREF_GIT_SERVER_PORT = "git_server_port";
     public static final String KEY_PREF_ALWAYS_SHARE = "always_share";
@@ -241,9 +239,7 @@ public class SettingsActivity extends PreferenceActivity implements ManagedTask.
         // their values. When their values change, their summaries are updated
         // to reflect the new value, per the Android Design guidelines.
 //        bindPreferenceSummaryToValue(findPreference(KEY_PREF_AUTOSAVE));
-        bindPreferenceSummaryToValue(findPreference(KEY_PREF_AUTH_SERVER));
         bindPreferenceSummaryToValue(findPreference(KEY_PREF_GIT_SERVER));
-        bindPreferenceSummaryToValue(findPreference(KEY_PREF_AUTH_SERVER_PORT));
         bindPreferenceSummaryToValue(findPreference(KEY_PREF_GIT_SERVER_PORT));
         bindPreferenceSummaryToValue(findPreference(KEY_PREF_GOGS_API));
 //        bindPreferenceSummaryToValue(findPreference(KEY_PREF_EXPORT_FORMAT));
@@ -531,10 +527,8 @@ public class SettingsActivity extends PreferenceActivity implements ManagedTask.
             // updated to reflect the new value, per the Android Design
             // guidelines.
 //            bindPreferenceSummaryToValue(findPreference(KEY_PREF_AUTOSAVE));
-            bindPreferenceSummaryToValue(findPreference(KEY_PREF_AUTH_SERVER));
             bindPreferenceSummaryToValue(findPreference(KEY_PREF_GIT_SERVER));
             bindPreferenceSummaryToValue(findPreference(KEY_PREF_GOGS_API));
-            bindPreferenceSummaryToValue(findPreference(KEY_PREF_AUTH_SERVER_PORT));
             bindPreferenceSummaryToValue(findPreference(KEY_PREF_GIT_SERVER_PORT));
             bindPreferenceSummaryToValue(findPreference(KEY_PREF_MEDIA_SERVER));
 
