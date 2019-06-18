@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="server_names_array">
+        <item>WACS</item>
+        <item>DCS</item>
+    </string-array>
+
+    <string-array name="server_values_array">
+        <item>wacs_value</item>
+        <item>dcs_value</item>
+    </string-array>
+
+</resources>

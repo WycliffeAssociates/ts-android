@@ -102,6 +102,7 @@
     <string name="git_rejected_remote_changed" translatable="false">[<xliff:g example="refs/heads/master" id="remote">%1$s</xliff:g>] Remote ref update was rejected,  because old object id on remote repository wasn\'t the same as defined expected old object.</string>
     <string name="git_uptodate" translatable="false">[<xliff:g example="refs/heads/master" id="remote">%1$s</xliff:g>] remote ref is up to date</string>
     <string name="git_server_details" translatable="false">Server: <xliff:g example="gitolite3@ts.door43.org:tS/46983314849sd54s6d/uw-obs-de" id="server">%1$s</xliff:g></string>
+    <string name="content_server">Content Server</string>
     <string name="opening_project">Opening project</string>
     <string name="loading_key_terms" translatable="false">@string/loading</string>
     <string name="loading_translation_notes" translatable="false">@string/loading</string>
