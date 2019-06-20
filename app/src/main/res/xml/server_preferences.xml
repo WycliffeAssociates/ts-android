@@ -18,8 +18,8 @@
         android:key="content_server"
         android:title="@string/content_server"
         android:defaultValue="wacs_value"
-        android:entries="@array/server_names_array"
-        android:entryValues="@array/server_values_array"
+        android:entries="@array/content_server_names_array"
+        android:entryValues="@array/content_server_values_array"
         android:summary="Select a content server"
         />
 

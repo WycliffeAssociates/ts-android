@@ -6,6 +6,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
@@ -14,6 +15,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.preference.EditTextPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
@@ -22,8 +24,10 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import org.unfoldingword.tools.logger.Logger;
@@ -523,6 +527,38 @@ public class SettingsActivity extends PreferenceActivity implements ManagedTask.
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.server_preferences);
             initSettings = true;
+
+            // Update all server fields if content server changed
+            getPreferenceManager().getSharedPreferences().registerOnSharedPreferenceChangeListener(new SharedPreferences.OnSharedPreferenceChangeListener() {
+                @Override
+                public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
+                    if (s.equals(KEY_PREF_CONTENT_SERVER)) {
+                        String newValue = sharedPreferences.getString(KEY_PREF_CONTENT_SERVER, "");
+                        String[] values = getResources().getStringArray(R.array.content_server_values_array);
+                        int index = Arrays.asList(values).indexOf(newValue);
+
+                        String[] gitServers = getResources().getStringArray(R.array.content_server_git_server_values_array);
+                        EditTextPreference gitServer = (EditTextPreference) findPreference(KEY_PREF_GIT_SERVER);
+                        gitServer.setText(gitServers[index]);
+                        gitServer.setSummary(gitServers[index]);
+
+                        String[] gitServerPorts = getResources().getStringArray(R.array.content_server_git_server_port_values_array);
+                        EditTextPreference gitServerPort = (EditTextPreference) findPreference(KEY_PREF_GIT_SERVER_PORT);
+                        gitServerPort.setText(gitServerPorts[index]);
+                        gitServerPort.setSummary(gitServerPorts[index]);
+
+                        String[] gitServerApis = getResources().getStringArray(R.array.content_server_git_server_api_values_array);
+                        EditTextPreference gitServerApi = (EditTextPreference) findPreference(KEY_PREF_GOGS_API);
+                        gitServerApi.setText(gitServerApis[index]);
+                        gitServerApi.setSummary(gitServerApis[index]);
+
+                        String[] mediaServers = getResources().getStringArray(R.array.content_server_media_server_values_array);
+                        EditTextPreference mediaServer = (EditTextPreference) findPreference(KEY_PREF_MEDIA_SERVER);
+                        mediaServer.setText(mediaServers[index]);
+                        mediaServer.setSummary(mediaServers[index]);
+                    }
+                }
+            });
 
             // Bind the summaries of EditText/List/Dialog/Ringtone preferences
             // to their values. When their values change, their summaries are
