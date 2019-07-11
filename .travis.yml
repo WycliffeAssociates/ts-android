@@ -18,6 +18,7 @@ env:
   - secure: zEpnW2GWrNYAPsRbaujdWfz3PlukJ56CaKA7CryPL9dfq3n0+wIcBr+E/INBFB9Oq/C66jaX71TE6z85GxOsLRJ+HCCvfWGpwZNMNfpeUmOHxjOEcHAn04Oxxili92XiuKO3763d+o8xY1Vp+oo6EAb2Wr+aRbyw09e4uiaYKujaIekvmRTSCEqKfivyJOhnETtU5B4s5jz3HP0+lkfv82yuKSmhGLs4Ba8o9pTRhwoud3HyrDDjDdLUnXadQG+IZyT6YCeae0U+0YIY/YgLw95NJjQJQmRCzS5W5yGCxpiVzSMyNJiFphgPH1VDPsSCGePF4GXmKZDWSJD0ib0mfUpxXDf5Q9cP+0jtg+nAPGEo/fi1YDbxe6GGVNFmwe0ezpU5DRHdpNF1NteGZArz3cW8Z859V/rNT8XDqmXKgXJItK7eBRra+bbGiaiM9zCPQYAc7u44lETWz3dXUyJcPBHYzmS09aItqsWFbDe3+TwSXAP62CSwyn4E0tw6Cij/CXXHRbgfkf5tSLAdd2BuAVovulkBqPDM2UEwo2AlrceozTv9M3xbN0ztZXRPpDV8dBvKUtX3GuLve+W0MkiPuncuL26/FMLDUYY/b4iLaWZosbzqYMqst2sgJDiwryn8Jwfk1VhSktzaN0y8l7xyfZuj7PpHjB9lVml2jPhoISY=
   - secure: Z2uyApW6+4KDXMRfR8YMvFNDqJpfBS9/U/3HdT5b8G9qnNXGN341QmvFcsSW+3z0lWLt/KDrc3irCwTrI07UlOJE4ohkdvPfFmCySWsZM9VrRVAKGVNEKtlyk6QIt0crKrGbqcoEOqWcjhPtS9cHEtOQ62Tdq7Wtb5HsBDZpO/qj9Ds80a85F5Xa9K9c7XFDCIXpoRaMW9IkqiA2v1NEsXsyDxDRPAfdkz18ndD7nsm5B2AbYdlzc78e7wUiGYZkJj8V8G0Zl3FwC4agboEInYiptzXKlVFI7r+eQF9SVQXRH593hWcMmeJ9/cDnEvVix2JkMgSKoNCxFkqIHhm5Rl84QpLI3EEWeQHs21btjV7f1ZzxxZ74k+P139FJEhgTG2nY2csDU7GIa2EPv768f6chpwgxkVQkrzewjYw+Olqhi9uENXA1axW15nGnhv73ZefFcRovcXPjFatYYJv0IulPy0iNtH8mpLqBzMmSD5xEGSjO/OJwpSvNEpftdehi9PTBBKuOB8vb2UUaxNN8Qs9gZU1x3IdLLeH8FqzF9Mjyt1pkzGy6F1zOvx5kiyG6C4aUmOroIaRr+ZJYdBCU/PNMcYpfuW82wCAaUR41jTzLNgfHwdST2EX0vmx2QxbVupMaz291R7VP+C9T3NTPNuz4/gkLBtcYZusQlVkeDDE=
   - secure: hrLo+6XlDXikadSQT9VWTc2Erq9ckZeK0DKqpNoiY/5J+IKKuXTEH9GHumEPTyOtAFnmApd8QVXPJMNKA74f4Owy87nK52/SPAOcX77EW1dReSK6x6fefBhji9HRgMshTjbSJfKvwyjvBvwMnMK0Fantkuh072b7AsS6QvvL8Amm5FZD0A35WsqJ/IaY3KszNkvTMsP8Ma9gQQLS4Q4q9F7M1i/l60pp29WxYZD3WieDLfbJpfhtpy1LpQ2IF/P5XqYZ+7Rs//L8pa6h4yKUvvne67JM2oF8/Y3h7a4llufshCfRXXS4UiDTcPaa+c4/JIldi41byStZncIoKNhitqbYEmX1OZUKJZR1Miihd35nEDNpRboD2fOsDyDSvdB7tGfFGnhkOn9t24fcq7sDHqc8YKKB7DnX/SOK0YahD0Fhn/FnivnWFWyhSNd6mSyL85inHtryL31k58lPMHBHeAxqeXm3PeqHsEKCN4DiumLD1d7E3ikCkroxc2jDVeJqQEP7+Z/HZPuz6pabg+umrfNNSaQ48YCsns63O83JzVM6IEbsvIDOfobTMfsr41425Wbo4YbvdB6LKEzi7R7W+MSIr+6GzeuThKFd0Xg5LsYoNf12pBgnyAPCzp37Fa3M0TGn/eQXfAxpyvQPQe9KZun24AjgyTPqn+iKh9LW6Ec=
+  - ARTIFACTS_PERMISSIONS=public-read
   matrix:
   - ANDROID_TARGET=android-25  ANDROID_ABI=armeabi-v7a
 android:
@@ -38,12 +39,9 @@ android:
   - android-sdk-license-.+
   - google-gdk-license-.+
 before_install:
-- if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then openssl aes-256-cbc -K $encrypted_e08b3ea16ca0_key
-  -iv $encrypted_e08b3ea16ca0_iv -in translationstudio.keystore.enc -out translationstudio.keystore
-  -d; fi
-- if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then openssl aes-256-cbc -K $encrypted_e08b3ea16ca0_key
-  -iv $encrypted_e08b3ea16ca0_iv -in strings_private_app_pref.xml.enc -out app/src/main/res/values/strings_private_app_pref.xml
-  -d; fi
+- if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then openssl aes-256-cbc -K $encrypted_e08b3ea16ca0_key -iv $encrypted_e08b3ea16ca0_iv -in secrets.tar.enc -out secrets.tar -d; fi
+- tar xvf secrets.tar
+- mv strings_private_app_pref.xml app/src/main/res/values/strings_private_app_pref.xml
 before_script:
 - chmod +x gradlew
 script:
