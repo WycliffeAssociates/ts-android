@@ -42,6 +42,7 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_e08b3ea16ca0_key -iv $encrypted_e08b3ea16ca0_iv -in secrets.tar.enc -out secrets.tar -d
 - tar xvf secrets.tar
 - mv strings_private_app_pref.xml app/src/main/res/values/strings_private_app_pref.xml
+- yes | sdkmanager --licenses
 before_script:
 - chmod +x gradlew
 script:
