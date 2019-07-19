@@ -379,7 +379,7 @@
     <string name="long_click_to_drag">Tap and hold to drag</string>
     <string name="feedback">Feedback</string>
     <string name="import_from_sd">Import from SD Card</string>
-    <string name="backup_to_door43">Upload to Door43</string>
+    <string name="backup_to_door43">Upload to Server</string>
     <string name="translation_export_failed">Translation could not be exported</string>
     <string name="invalid_file">Not a valid file</string>
     <string name="software_licenses" translatable="false">
@@ -706,19 +706,19 @@ Do you want to enable SD card access?  If so then:
     <string name="log_out">Log out</string>
     <string name="gogs_username_already_exists">That username already exists</string>
     <string name="registration_failed">Your account could not be created.</string>
-    <string name="title_door43_account_required">Door43 Account Required</string>
-    <string name="door43_account_required">You must connect to a Door43 account first.</string>
-    <string name="login_doo43">Login with Door43 Account</string>
-    <string name="register_door43">Create new Door43 Account</string>
+    <string name="title_door43_account_required">Server Account Required</string>
+    <string name="door43_account_required">You must connect to a server account first.</string>
+    <string name="login_doo43">Login with Server Account</string>
+    <string name="register_door43">Create new Server Account</string>
     <string name="create_offline_profile">Create offline Account</string>
-    <string name="still_possible_to_register_door43">You can still create or login to a Door43 account later</string>
-    <string name="title_connect_door43">Connect To Door43</string>
+    <string name="still_possible_to_register_door43">You can still create or login to a server account later</string>
+    <string name="title_connect_door43">Connect To Server</string>
     <string name="gogs_public_key_name">ts-android</string>
     <string name="restore_failed">The translation could not be imported</string>
-    <string name="import_from_door43">Import from Door43</string>
-    <string name="restore_from_door43">Restore from Door43</string>
+    <string name="import_from_door43">Import from Server</string>
+    <string name="restore_from_door43">Restore from Server</string>
     <string name="title_chunk_conflicts">Chunk Conflicts</string>
-    <string name="chunk_conflict_description">A conflict was found between the translation on Door43 and your device.</string>
+    <string name="chunk_conflict_description">A conflict was found between the translation on the server and your device.</string>
     <string name="review_conflicts">Review differences</string>
     <string name="keep_server_changes">Keep server changes</string>
     <string name="keep_local_changes">Keep my changes</string>
@@ -826,8 +826,8 @@ Do you want to enable SD card access?  If so then:
     <string name="updating_projects">Updating projects</string>
     <string name="view_online">View Online</string>
     <string name="change_detected">Project Change Detected</string>
-    <string name="upload_push_failure">There are changes to this translation on your Door43 account. You must import those changes before uploading.</string>
-    <string name="merge_request">There are changes to your translation of \'<xliff:g example="Hebrews" id="book">%1$s</xliff:g>\' in \'<xliff:g example="English" id="language">%2$s</xliff:g>\' on your Door43 account. Would you like to import those changes now?</string>
+    <string name="upload_push_failure">There are changes to this translation on your server account. You must import those changes before uploading.</string>
+    <string name="merge_request">There are changes to your translation of \'<xliff:g example="Hebrews" id="book">%1$s</xliff:g>\' in \'<xliff:g example="English" id="language">%2$s</xliff:g>\' on your server account. Would you like to import those changes now?</string>
     <string name="import_failed_title">Import failed</string>
     <string name="push_rejected">Upload failed because of changes on Server. Do you want to review conflicts?</string>
     <string name="backup_rejected">Backup failed because of changes on Server. Do you want to review conflicts?</string>
@@ -845,7 +845,7 @@ Do you want to enable SD card access?  If so then:
     <string name="menu_upload_export">Upload/Export</string>
     <string name="title_review">Project Review</string>
     <string name="title_book">Project</string>
-    <string name="tip_backup_to_door43">Uploads project to your Door43 Account.\nBy uploading the project to your Door43 account, the content is available to be downloaded by other translators, merged with other projects, or used as an online backup.</string>
+    <string name="tip_backup_to_door43">Uploads project to your server account.\nBy uploading the project to your server account, the content is available to be downloaded by other translators, merged with other projects, or used as an online backup.</string>
     <string name="tip_backup_to_sd">Creates a copy of your project file</string>
     <string name="draft_translation">Draft Level <xliff:g example="3" id="checking_level">%1$d</xliff:g>: <xliff:g example="Pig Latin" id="language">%2$s</xliff:g></string>
     <string name="title_download_source_language">Download from Online</string>
