@@ -50,9 +50,7 @@ before_script:
 - chmod +x gradlew
 script:
 - "./gradlew test --stacktrace"
-after_success:
-- test $TRAVIS_TEST_RESULT == 0
-- "./gradlew assembleRelease"
+- if [ $TRAVIS_TEST_RESULT == 0 ]; then "./gradlew assembleRelease"; fi
 deploy:
   provider: releases
   api_key:
