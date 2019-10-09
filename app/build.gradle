@@ -25,13 +25,13 @@ android {
             }
         }
     }
-    compileSdkVersion 29
+    compileSdkVersion 28
     defaultConfig {
-        applicationId "com.translationstudio.androidapp"
+        applicationId "org.bibletranslationtools.writer.android"
         minSdkVersion 15
-        targetSdkVersion 29
-        versionCode 176
-        versionName "11.0"
+        targetSdkVersion 28
+        versionCode 2
+        versionName "1.0.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     } 
     buildTypes {
