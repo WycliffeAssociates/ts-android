@@ -65,6 +65,13 @@ android {
     }
 }
 
+configurations {
+    all {
+        exclude module: 'httpclient'
+        exclude module: 'commons-logging'
+    }
+}
+
 if (System.env.TRAVIS == 'true') {
     allprojects {
         tasks.withType(GroovyCompile) {
