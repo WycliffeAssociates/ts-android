@@ -50,11 +50,8 @@ android {
         }
         applicationVariants.all { variant ->
             if(variant.buildType.name == "release") {
-                variant.outputs.all { output ->
-                    def newName = "release.apk";
-                    def outDir = new File('app/release/');
-                    outDir.mkdirs();
-                    outputFileName = new File(outDir, newName);
+                variant.outputs.all {
+                    outputFileName = "release.apk"
                 }
             }
         }
